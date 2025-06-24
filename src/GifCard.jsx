@@ -1,28 +1,24 @@
-import React, { useEffect, useState } from 'react';
+import React from "react";
 
-const GetGif = async () => {
-  const GIFAPIKEY = "https://api.giphy.com/v1/gifs/random?api_key=3Xt6KP7aUbnzyRIIlngcOzpV95VCfD0L&tag=&rating=g";
-
-  try {
-    const response = await fetch(GIFAPIKEY);
-    if (!response.ok) {
-      throw new Error(`Error: ${response.status}`);
+const SearchField = ({ query, setQuery, onSearch }) => {
+  const handleKeyDown = (e) => {
+    if (e.key === "Enter") {
+      onSearch();
     }
-    const json = await response.json();
-  } catch (error) {
-    console.error(error.message);
-    return "we dont know yet"
-  }
-
-  function useEffect() =>
-  {
-    fetch(GIFAPIKEY)
-  }
-};
-
-const GifCard = () =>
-  {
-    
   };
 
-export default GifCard;
+  return (
+    <div>
+      <input
+        type="text"
+        value={query}
+        onChange={(e) => setQuery(e.target.value)}
+        onKeyDown={handleKeyDown}
+        placeholder="Search GIFs"
+      />
+      <button onClick={onSearch}>Search</button>
+    </div>
+  );
+};
+
+export default SearchField;
