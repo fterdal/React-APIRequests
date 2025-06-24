@@ -25,6 +25,10 @@ body {
   min-height: 100vh;
 }
 
+.app * {
+  color: #ffffff;
+}
+
 .gif-card {
   width: 200px;
   height: 200px;
