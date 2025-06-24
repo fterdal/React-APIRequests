@@ -7,6 +7,7 @@
 
 body {
   background-color: #160f29;
+  padding: 20px;
 }
 
 .title {
@@ -25,14 +26,65 @@ body {
   min-height: 100vh;
 }
 
+.gif-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.gif-input {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.search-input {
+  width: 600px;
+  padding: 12px;
+  border-radius: 5px;
+  border: none;
+  margin-bottom: 20px;
+  font-size: 1rem;
+}
+
+.search-input:focus {
+  outline: none;
+  box-shadow: 0 0 5px rgba(88, 84, 84, 0.5);
+}
+
+.search-input::placeholder {
+  color: #cccccc;
+  font-size: 16px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.gif-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1rem;
+  justify-items: center;
+}
+
 .gif-card {
-  width: 200px;
-  height: 200px;
   border-radius: 10px;
   overflow: hidden;
   margin: 1rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border: 2px solid #ffffff;
+  transition: transform 0.2s ease-in-out;
 }
 
-.gif-card img {
+.gif-card:hover {
+  transform: scale(1.05);
+  cursor: pointer;
+}
+
+.gig-img {
   width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
