@@ -36,3 +36,9 @@ body {
 .gif-card img {
   width: 100%;
 }
+
+.gif-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
